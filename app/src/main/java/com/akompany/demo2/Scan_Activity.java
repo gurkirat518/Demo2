@@ -19,13 +19,11 @@ import info.androidhive.barcode.BarcodeReader;
 
 public class Scan_Activity extends AppCompatActivity implements BarcodeReader.BarcodeReaderListener,View.OnClickListener{
 
-Button back,cart;
-
+Button back;
 void init(){
     back=(Button)findViewById(R.id.buttonBack);
-    cart=(Button)findViewById(R.id.button3);
+
     back.setOnClickListener(this);
-    cart.setOnClickListener(this);
 }
 
 
@@ -48,7 +46,7 @@ void init(){
       barcodeReader.playBeep();
 
      final String s=barcode.displayValue;
-      /* runOnUiThread(new Runnable() {
+       runOnUiThread(new Runnable() {
            @Override
            public void run() {
                if(!isFinishing()){
@@ -59,11 +57,11 @@ void init(){
            }
        });
 
-
-       */ Intent i= new Intent(Scan_Activity.this,Main3Activity.class);
+/*
+        Intent i= new Intent(Scan_Activity.this,Main3Activity.class);
         i.putExtra("code",barcode.displayValue);
         startActivity(i);
-
+*/
 
     }
 
@@ -93,13 +91,10 @@ void init(){
 
     @Override
     public void onClick(View view) {
-
-
-            Intent i1 = new Intent(Scan_Activity.this, MainActivity.class);
-            startActivity(i1);
-
-
-            //cart wala button press kar 
-
-        }
+        Intent i1=new Intent(Scan_Activity.this,Main2Activity.class);
+        startActivity(i1);
+        //change dekh rha hai kya
+    }
 }
+
+
