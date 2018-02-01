@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseArray;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.vision.barcode.Barcode;
@@ -15,9 +17,14 @@ import java.util.List;
 
 import info.androidhive.barcode.BarcodeReader;
 
-public class Scan_Activity extends AppCompatActivity implements BarcodeReader.BarcodeReaderListener{
+public class Scan_Activity extends AppCompatActivity implements BarcodeReader.BarcodeReaderListener,View.OnClickListener{
 
+Button back;
+void init(){
+    back=(Button)findViewById(R.id.buttonBack);
 
+    back.setOnClickListener(this);
+}
 
 
    BarcodeReader barcodeReader;
@@ -30,6 +37,7 @@ public class Scan_Activity extends AppCompatActivity implements BarcodeReader.Ba
         setContentView(R.layout.activity_scan_);
         barcodeReader=(BarcodeReader)getSupportFragmentManager().findFragmentById(R.id.barcode_scanner);
 
+        init();
     }
 
 
@@ -78,5 +86,12 @@ public class Scan_Activity extends AppCompatActivity implements BarcodeReader.Ba
     public void onCameraPermissionDenied() {
 
         finish();
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        Intent i=new Intent(Scan_Activity.this,Main2Activity.class);
+        startActivity(i);
     }
 }
