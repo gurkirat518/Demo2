@@ -91,7 +91,8 @@ void init(){
 
     @Override
     public void onClick(View view) {
-        Intent i=new Intent(Scan_Activity.this,Main2Activity.class);
-        startActivity(i);
+        Intent i1=new Intent(Scan_Activity.this,Main2Activity.class);
+        startActivity(i1);
+        //change dekh rha hai kya
     }
 }
