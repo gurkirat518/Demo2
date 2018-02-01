@@ -46,7 +46,7 @@ void init(){
       barcodeReader.playBeep();
 
      final String s=barcode.displayValue;
-       runOnUiThread(new Runnable() {
+      /* runOnUiThread(new Runnable() {
            @Override
            public void run() {
                if(!isFinishing()){
@@ -58,9 +58,9 @@ void init(){
        });
 
 
-       /* Intent i= new Intent(Scan_Activity.this,Main3Activity.class);
+       */ Intent i= new Intent(Scan_Activity.this,Main3Activity.class);
         i.putExtra("code",barcode.displayValue);
-        startActivity(i); */
+        startActivity(i);
 
 
     }
